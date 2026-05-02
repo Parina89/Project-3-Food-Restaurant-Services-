@@ -1,141 +1,34 @@
-#  AI Demand Forecasting & Inventory Optimization
+# Restaurant Sales Forecasting Pipeline
 
-##  Overview
+End-to-end ML pipeline to predict daily restaurant sales.
 
-This project focuses on building an AI-powered demand forecasting system for the restaurant and food service industry. The goal is to predict daily sales of menu items using historical and external data, enabling smarter inventory decisions and reducing food waste.
+## Quickstart
 
-Traditional inventory systems rely on static estimates and intuition, often leading to:
+```bash
+pip install -r requirements.txt
+python pipeline.py
+```
 
-* Over-ordering → food spoilage and losses
-* Under-ordering → stockouts and missed revenue
+## Pipeline Stages
 
-This project replaces guesswork with data-driven forecasting.
+| Week | Stage | Key Outputs |
+|------|-------|-------------|
+| 1 | EDA & Data Ingestion | Daily time series, decomposition |
+| 2 | Feature Engineering | Lag features, rolling stats, encoding |
+| 3 | Model Training | Baseline, LR, RF, XGBoost |
+| 4 | Evaluation & Reporting | MAE/RMSE/MAPE, feature importance, chart |
 
+## Results
 
-##  Objectives
+| Model | MAE | RMSE | MAPE |
+|-------|-----|------|------|
+| Random Forest | 1591.8 | 2124.2 | 21.5% |
+| XGBoost | 1699.8 | 2289.3 | 23.1% |
+| Naive Baseline | 2241.3 | 2970.1 | 28.2% |
+| Linear Regression | 3599.8 | 12370.2 | 51.9% |
 
-* Forecast daily demand for menu items
-* Reduce food waste and operational costs
-* Improve supply chain efficiency
-* Enable proactive business planning
+**Best model**: Random Forest (MAPE: 21.5%)
 
+**Top demand driver**: Day-of-Week features (79% of model weight)
 
-## Key Metrics
-
-Model performance is evaluated using regression metrics:
-
-* **MAE (Mean Absolute Error)**
-* **RMSE (Root Mean Square Error)**
-
-The model should capture:
-
-* Weekly demand patterns (weekend spikes)
-* Seasonal trends
-* Long-term growth patterns
-
-
-## Users & Use Cases
-
-### Restaurant Manager
-
-* Plans daily ingredient preparation
-* Uses forecasts to minimize waste
-
-### Supply Chain Director
-
-* Optimizes bulk purchasing decisions
-* Coordinates logistics across locations
-
-### Data Scientist
-
-* Engineers features
-* Integrates external data (weather, events)
-
-
-## Features
-
-### 1. Time-Series Data Processing
-
-* Clean and structure raw sales data
-* Handle missing dates and anomalies
-* Aggregate data (daily/hourly)
-
-### 2. Feature Engineering
-
-* Time-based features:
-
-  * Day of week
-  * Month
-  * Weekend/holiday indicators
-* Lag features (e.g., previous 7-day sales)
-* Rolling statistics (moving averages)
-
-### 3. Forecasting Models
-
-* Baseline: Linear Regression
-* Advanced:
-
-  * Random Forest Regressor
-  * XGBoost
-  * Prophet
-
-### 4. Visualization
-
-* Compare predicted vs actual demand
-* Identify trends and seasonality
-  
-
-## Tech Stack
-
-| Component       | Technology                     |
-| --------------- | ------------------------------ |
-| Data Processing | Python, Pandas, NumPy          |
-| Modeling        | Scikit-Learn, XGBoost, Prophet |
-| Visualization   | Matplotlib, Plotly             |
-
-
-## Project Roadmap
-
-### Week 1: Data Ingestion & EDA
-
-* Load and clean dataset
-* Format datetime index
-* Perform time-series EDA:
-
-  * Trend analysis
-  * Seasonality decomposition
-  * Autocorrelation
-
-
-### Week 2: Feature Engineering
-
-* Create time-based features
-* Generate lag features
-* Build rolling statistics
-* Perform sequential train-test split
-
-
-### Week 3: Model Training
-
-* Train baseline model
-* Implement advanced models
-* Tune hyperparameters
-* Use time-series cross-validation
-
-
-### Week 4: Evaluation & Reporting
-
-* Evaluate using MAE & RMSE
-* Analyze feature importance
-* Visualize predictions vs actuals
-* Prepare final results and insights
-
-
-## Expected Outcomes
-
-* Accurate demand forecasting model
-* Reduced inventory waste (20–30% potential reduction)
-* Actionable business insights
-* End-to-end ML pipeline
-
----
+**Revenue impact**: ~Rs.397,945/day average forecast error
