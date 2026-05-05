@@ -22,13 +22,13 @@ python pipeline.py
 
 | Model | MAE | RMSE | MAPE |
 |-------|-----|------|------|
-| Random Forest | 1591.8 | 2124.2 | 21.5% |
-| XGBoost | 1699.8 | 2289.3 | 23.1% |
+| Random Forest | 1592.0 | 2123.8 | 21.6% |
+| XGBoost | 1631.4 | 2207.2 | 22.0% |
 | Naive Baseline | 2241.3 | 2970.1 | 28.2% |
 | Linear Regression | 3599.8 | 12370.2 | 51.9% |
 
-**Best model**: Random Forest (MAPE: 21.5%)
+**Best model**: Random Forest (MAPE: 21.6%)
 
-**Top demand driver**: Day-of-Week features (79% of model weight)
+**Top demand driver**: Day-of-Week features (82% of model weight)
 
-**Revenue impact**: ~Rs.397,945/day average forecast error
+**Revenue impact**: ~Rs.397,996/day average forecast error
