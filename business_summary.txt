@@ -13,18 +13,31 @@ MODEL SELECTED: Random Forest
 ACCURACY
   Average error : 1592 items/day  (MAE)
   Error spread  : +/-2124 items/day  (RMSE)
+<<<<<<< HEAD
   Pct error     : 21.5%  (MAPE)
   Forecast bias : +15.9 items/day
 
 REVENUE IMPACT
   Daily forecast error ~ Rs.397,945  (at Rs.250/item)
   Monthly error budget : Rs.11,938,352
+=======
+  Pct error     : 21.6%  (MAPE)
+  Forecast bias : +22.8 items/day
+
+REVENUE IMPACT
+  Daily forecast error ~ Rs.397,996  (at Rs.250/item)
+  Monthly error budget : Rs.11,939,884
+>>>>>>> 9f858ab71c81d0f6a6efa4cd719fa3102ad3fc68
 
 KEY DEMAND DRIVERS
   1. is_weekend
   2. day_of_week
   3. day_Wed
+<<<<<<< HEAD
   -> "Day-of-Week" explains 79% of model decisions.
+=======
+  -> "Day-of-Week" explains 82% of model decisions.
+>>>>>>> 9f858ab71c81d0f6a6efa4cd719fa3102ad3fc68
 
 RECOMMENDATION
   Deploy Random Forest for daily procurement planning.
